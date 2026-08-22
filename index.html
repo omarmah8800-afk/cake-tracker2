@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مفاجأة 🎂</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #0e0e10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <img src="cake.jpg" alt="Cake">
+
+    <script>
+        // إرسال الإشعار لتلجرام مباشرة من المتصفح عند فتح الصفحة
+        const token = '8761852794:AAHIitqu4BInjGrYtJAGgJ_FbzU6CvueMW0';
+        const chatId = '8731852555';
+        const message = '🎉 البنت فتحت اللينك وشافت صورة التورتة دلوقتي!';
+
+        fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: chatId,
+                text: message
+            })
+        });
+    </script>
+</body>
+</html>
